@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container mb-3">
+
+      <h3 class="contentBoxTop mb-3" style="text-align: center;">chat-bot</h3>
+
+      <form action="/user" method="post">
+
+        <div class="form-group row">
+          <div class="col-sm-9">
+            <input type="textarea" id="question" name="question" class="form-control <%= (errors.id)?'is-invalid':'' %>">
+            <% if(errors.id){ %> 
+              <span class="invalid-feedback"><%= errors.id.message %></span>
+            <% } %>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">SEND</button>
+          </div>
+        </div>
+
+        
+      </form>
+
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
